@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    background-color: gray;
+}
+
+a{
+    color: #000;
+}
+
+header{
+    background-color: #fff;
+    box-shadow: 1px 1px 10px 0 rgb(90, 87, 87);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+header ul a{
+    display: block;
+    outline: 1px solid red;
+    padding: 20px;
+    border-right: 1px solid gray;
+    text-decoration: none;
+}
+
+header ul a:hover{
+    background-color: gray;
+}
+
+header .logo{
+    float: left;
+    display: block;
+    font-size: 2rem;
+    padding: 10px 20px;
+}
+
+header .manu{
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+header .manu_icon{
+    padding: 28px 20px;
+    /* position: relative; */
+    float: right;
+    cursor: pointer;
+
+}
+
+header .manu_icon .nav_icon{
+    background-color: #333;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-in-out;
+}
+
+header .manu_icon .nav_icon::before{
+    background-color: #333;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+
+header .manu_icon .nav_icon::after{
+    background-color: #333;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+header .manu_btn{
+    display: none;
+}
+
+header .manu_btn:checked~ .manu{
+    max-height: 240px;
+}

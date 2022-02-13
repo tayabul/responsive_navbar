@@ -1,0 +1,161 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: montserrat;
+}
+
+nav{
+    background-color: #0092e6;
+    height: 80px;
+    width: 100%;
+}
+
+ .logo{
+    color: #fff;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: 600;
+}
+
+nav .manu{
+    float: right;
+    margin-right: 20px;
+
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 15px;
+}
+
+nav ul li a{
+    color: rgb(243, 236, 236);
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.active, a:hover{
+    background-color: #1b9bff;
+    transition: .5s;
+}
+
+nav .manu-icon{
+    padding: 20px;
+    cursor: pointer;
+    float: right;
+    margin: 20px 20px 0 0;
+}
+
+nav .nav-icon{
+    background-color: rgb(255, 255, 255);
+    height: 3px;
+    width: 25px;
+    display: block;
+    position: relative;
+}
+
+.check{
+    display: none;
+}
+
+nav .nav-icon::before{
+    background-color: rgb(255, 255, 255);
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 5px;
+}
+
+nav .nav-icon::after{
+    background-color: rgb(255, 255, 255);
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -5px;
+}
+
+nav .nav-icon::after, nav .nav-icon::before, nav .nav-icon{
+    display: none;
+}
+
+@media (max-width: 992px){ 
+    .logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 850px){
+    nav .nav-icon::after, nav .nav-icon::before, nav .nav-icon{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 310px;
+        background: rgb(41, 105, 105);
+        padding-left: 40px;
+        left: -100%;
+        transition: all .5s;
+        text-align: center;
+    }
+    nav ul li{
+        display: block;
+    }
+
+    a:hover, .active{
+        background: none;
+        color: #0082e6;
+    }
+
+    .check:checked ~ ul{
+        left: 0;
+    }
+
+    .check:checked ~ .manu-icon .nav-icon{
+        background-color: transparent;
+    }
+
+    .check:checked ~ .manu-icon .nav-icon::before{
+        transform: rotate(-45deg);
+        top: 0;
+        transition: all .2s ease-in;
+    }
+
+    .check:checked ~ .manu-icon .nav-icon::after{
+        transform: rotate(45deg);
+        top: 0;
+        transition: all .2s ease-in;
+    }
+
+
+}
+
+/* end navbar style and resposive */
+
+
+section{
+    width: 100%;
+    background-image: url(img/header_bottom_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
